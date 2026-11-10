@@ -1,5 +1,5 @@
 import { site } from '../site.mjs';
-import { esc, md, inline, img, abs } from '../lib/html.mjs';
+import { esc, md, inline, img, abs, beginDedupe, endDedupe } from '../lib/html.mjs';
 import { layout } from './layout.mjs';
 import { leadForm, phoneLink } from './parts.mjs';
 import { services, bySlug } from '../content/services/index.mjs';
@@ -56,12 +56,13 @@ const gallery = [
   ['shopBays', 'Repair shop service bays'],
   ['poolPatio', 'Patio and pool surround'],
   ['warehouse', 'Racked warehouse aisles'],
-  ['garageYellow', 'Wash and detailing bays'],
+  ['xHomeGym', 'Garage gyms and workshops'],
   ['stripes', 'Safety striping on a work floor'],
   ['rvParked', 'RV pads and tall garage bays'],
 ];
 
 export function renderHome() {
+  beginDedupe(['xHomeGym', 'boatPort', 'garageClassics', 'garageYellow', 'livingSofa', 'poolPatio', 'river', 'rvParked', 'shopBays', 'stripes', 'warehouse']);
   const body = `
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap hero__top">
@@ -73,7 +74,7 @@ export function renderHome() {
   </div>
   <div class="wrap">
     <div class="hero__strip">
-      ${img('river', { eager: true, sizes: '(max-width: 1240px) 94vw, 1180px', widths: [700, 1100, 1600, 2200], ratio: 21 / 8 })}
+      ${img('river', { keep: true, eager: true, sizes: '(max-width: 1240px) 94vw, 1180px', widths: [700, 1100, 1600, 2200], ratio: 21 / 8 })}
       <svg class="arc" viewBox="0 0 1000 380" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 370 Q 500 -120 1010 370"/></svg>
     </div>
     <ul class="hero__counts">
@@ -181,7 +182,7 @@ Metallic epoxy goes further. Pigments are worked by hand through clear resin to 
         <li><span style="--c:#efe4cf"></span>Sand</li>
       </ul>
     </div>
-    <figure class="deco__fig rise d1">${img('garageYellow', { sizes: '(max-width: 900px) 94vw, 520px', widths: [520, 900], ratio: 4 / 5 })}</figure>
+    <figure class="deco__fig rise d1">${img('garageYellow', { keep: true, sizes: '(max-width: 900px) 94vw, 520px', widths: [520, 900], ratio: 4 / 5 })}</figure>
   </div>
 </section>
 
@@ -261,7 +262,7 @@ Spring wind and summer storms push fine dust into every space. We seal openings 
 <section class="sec" id="gallery" aria-labelledby="gal-h">
   <div class="wrap">
     <div class="sh rise"><h2 id="gal-h">Floors and spaces we coat</h2><p>The kinds of rooms and buildings we work on most around the river.</p></div>
-    <ul class="gal">${gallery.map(([k, c], i) => `<li class="rise d${i % 3}"><figure>${img(k, { sizes: '(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 380px', widths: [400, 760] })}<figcaption>${esc(c)}</figcaption></figure></li>`).join('')}</ul>
+    <ul class="gal">${gallery.map(([k, c], i) => `<li class="rise d${i % 3}"><figure>${img(k, { keep: true, sizes: '(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 380px', widths: [400, 760] })}<figcaption>${esc(c)}</figcaption></figure></li>`).join('')}</ul>
   </div>
 </section>
 
@@ -297,6 +298,7 @@ Spring wind and summer storms push fine dust into every space. We seal openings 
   const schema = [
     { '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') } })) },
   ];
+  endDedupe();
   return layout({
     path: '/',
     title: 'Epoxy Flooring Bullhead City AZ | Garage, Patio & Commercial',
