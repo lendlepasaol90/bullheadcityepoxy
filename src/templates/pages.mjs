@@ -93,7 +93,7 @@ We use your details only to reply to you, arrange a visit and talk about your pr
 
 ## Services we rely on
 
-Form submissions may reach us through an email or workflow service. The map is provided by Google Maps and the photographs are delivered by Unsplash. These providers may log standard technical information, such as IP addresses, under their own privacy policies.
+Form submissions may reach us through an email or workflow service. The map is provided by Google Maps, which may log standard technical information, such as IP addresses, under their own privacy policies.
 
 ## Changing or removing your details
 

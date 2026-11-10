@@ -465,3 +465,6 @@ strong { font-weight: 700; color: var(--brown-d); }
 @media (max-width: 340px) {
   .mark__txt { display: none; }
 }
+
+/* Let comparison tables scroll inside their box instead of widening the page */
+main *:has(table) { min-width: 0; }

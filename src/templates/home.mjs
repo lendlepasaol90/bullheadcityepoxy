@@ -50,14 +50,14 @@ const faqs = [
 ];
 
 const gallery = [
-  ['garageClassics', 'Classic cars on a sealed garage floor'],
-  ['boatPort', 'Boat and car storage under one roof'],
+  ['garageClassics', 'Classic cars on a polished floor'],
+  ['boatPort', 'Boat and RV parking at home'],
   ['livingSofa', 'Seamless floor in a living room'],
   ['shopBays', 'Repair shop service bays'],
   ['poolPatio', 'Patio and pool surround'],
   ['warehouse', 'Racked warehouse aisles'],
-  ['garageYellow', 'Showroom-style garage'],
-  ['stripes', 'Safety striping on a parking floor'],
+  ['garageYellow', 'Wash and detailing bays'],
+  ['stripes', 'Safety striping on a work floor'],
   ['rvParked', 'RV pads and tall garage bays'],
 ];
 
