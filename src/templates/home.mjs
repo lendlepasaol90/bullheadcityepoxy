@@ -43,7 +43,7 @@ const faqs = [
   { q: 'Will hot tires lift the coating?', a: 'Hot-tire pickup happens when a coating is too thin, poorly bonded or not fully cured. Grinding, proper film thickness and an honest cure time before parking prevent it. We tell you exactly when it is safe to pull in.' },
   { q: 'Which coating is best for a garage that faces west?', a: 'A west-facing garage takes full afternoon sun. We use a light-stable polyaspartic topcoat over the base so the color does not yellow, and lighter colors that stay cooler underfoot.' },
   { q: 'Can I coat my RV or boat garage?', a: 'Yes. Taller bays often carry heavier loads and more fluids, so we look closely at the slab and joints and use a thicker system where trailer jacks and leveling blocks sit.' },
-  { q: 'Do you coat pool decks and patios?', a: 'Yes, with outdoor systems built for sun, water and bare feet. See our [patio and concrete coatings](/patio-concrete-coatings/) page.' },
+  { q: 'Do you coat pool decks and patios?', a: 'Yes, with outdoor systems built for sun, water and bare feet. See our [patio and concrete coatings](/patio-pool-deck-coatings/) page.' },
   { q: 'How long does a garage take?', a: 'Most two- and three-car garages take one to two days of work, plus cure time before vehicles return. Polyaspartic systems shorten that wait.' },
   { q: 'Do I need to be home during the work?', a: 'Not the whole time. We need access, power and a clear space. If you are a winter resident, we can arrange the job around the weeks you are in town.' },
   { q: 'Are estimates free?', a: 'Yes. We come out, look at the concrete and send a written quote. There is no obligation.' },
@@ -69,7 +69,7 @@ export function renderHome() {
     <h1 id="hero-h" class="hero__h">Floor coatings for life on the river</h1>
     <div class="hero__side">
       <p class="hero__lede">Garage, home, patio and commercial floors for Bullhead City and the Colorado River communities, prepared properly and installed around the heat.</p>
-      <div class="hero__btns"><button class="btn btn--gold" type="button" data-quote>Get a free quote</button><a class="btn btn--line" href="#services">See services</a></div>
+      <div class="hero__btns"><a class="btn btn--gold" href="#__EST__">Get a free quote</a><a class="btn btn--line" href="#services">See services</a></div>
     </div>
   </div>
   <div class="wrap">
@@ -109,7 +109,7 @@ We coat garages, casitas and living spaces, patios and pool decks, shops, restau
 <section class="sec rail-sec" id="services" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="rail__hd">
-      <div class="sh rise"><h2 id="svc-h">Our coating services</h2><p>Nine services, each with its own page that explains the system, where it fits and what to expect.</p></div>
+      <div class="sh rise"><h2 id="svc-h">Our coating services</h2><p>Eight services, each with its own page that explains the system, where it fits and what to expect.</p></div>
       <div class="rail__btns"><button type="button" class="rbtn" data-rail="-1" aria-label="Previous services"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg></button><button type="button" class="rbtn" data-rail="1" aria-label="Next services"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg></button></div>
     </div>
   </div>
@@ -125,8 +125,8 @@ We coat garages, casitas and living spaces, patios and pool decks, shops, restau
       <h2 id="gar-h">Garage floors for boats, RVs, side-by-sides and the family car</h2>
       ${md(`In a river town, the garage does a lot more than hold a sedan. It is where the boat waits on its trailer, where the jet skis get rinsed off, where the side-by-side comes back caked in wash sand, and where an RV bay might take up half the lot. Those floors see fuel, two-stroke oil, wet sand and heavy point loads from trailer jacks and stabilizers.
 
-Our ${svcLink('garage-floor-coatings', 'garage floor coatings')} start with grinding and crack repair, then build a base coat, a full or partial broadcast of color flake and a UV-stable topcoat. In tall RV and boat bays we add thickness under jacks and leveling blocks. Around the door we can add texture, because wet floors and flip-flops are a poor mix.`)}
-      <p class="chap__links"><a href="/garage-floor-coatings/">Garage coatings</a><a href="/decorative-flake-flooring/">Flake floors</a><a href="/polyaspartic-floor-coatings/">Polyaspartic</a></p>
+Our ${svcLink('garage-floor-epoxy', 'garage floor coatings')} start with grinding and crack repair, then build a base coat, a full or partial broadcast of color flake and a UV-stable topcoat. In tall RV and boat bays we add thickness under jacks and leveling blocks. Around the door we can add texture, because wet floors and flip-flops are a poor mix.`)}
+      <p class="chap__links"><a href="/garage-floor-epoxy/">Garage coatings</a><a href="/flake-floors/">Flake floors</a><a href="/polyaspartic-coatings/">Polyaspartic</a></p>
     </div>
   </div>
 </section>
@@ -138,7 +138,7 @@ Our ${svcLink('garage-floor-coatings', 'garage floor coatings')} start with grin
       <h2 id="res-h">Living spaces, casitas and laundry rooms</h2>
       ${md(`Plenty of homes here are built on slab, and many owners are tired of carpet that holds dust or tile with grout lines that never look clean. A coated floor is seamless, cool underfoot and easy to mop. It suits casitas, game rooms, laundry and mudrooms, and full living areas in homes that go for a modern look.
 
-${svcLink('residential-epoxy-flooring', 'Residential epoxy')} inside the house is about patience: careful dust control, flattening the slab, a moisture check, and finishes that suit the room. Solid colors, fine flake, quartz textures and polished-look clear coats are all on the table. For a showpiece room, ${svcLink('metallic-epoxy-flooring', 'metallic epoxy')} gives the floor movement and depth.`)}
+${svcLink('interior-floors', 'Residential epoxy')} inside the house is about patience: careful dust control, flattening the slab, a moisture check, and finishes that suit the room. Solid colors, fine flake, quartz textures and polished-look clear coats are all on the table. For a showpiece room, ${svcLink('metallic-floors', 'metallic epoxy')} gives the floor movement and depth.`)}
     </div>
   </div>
 </section>
@@ -150,7 +150,7 @@ ${svcLink('residential-epoxy-flooring', 'Residential epoxy')} inside the house i
       <h2 id="com-h">Commercial floors for shops, restaurants and service businesses</h2>
       ${md(`The local economy runs on visitors, retirees and the people who look after them, and that means a lot of floor traffic. Restaurants and bars need surfaces that shrug off spills and hot cleaning water. Clinics and offices want something bright and simple to sanitize. Retail shops and showrooms want a floor that looks good with sand tracked in from the parking lot.
 
-Our ${svcLink('commercial-epoxy-flooring', 'commercial epoxy flooring')} is scheduled to keep you open, often in sections or over a closed day. We match the system to the business: slip-resistant textures in kitchens, chemical-resistant topcoats in service areas and decorative finishes in customer-facing rooms.`)}
+Our ${svcLink('commercial-coatings', 'commercial epoxy flooring')} is scheduled to keep you open, often in sections or over a closed day. We match the system to the business: slip-resistant textures in kitchens, chemical-resistant topcoats in service areas and decorative finishes in customer-facing rooms.`)}
     </div>
   </div>
 </section>
@@ -162,7 +162,7 @@ Our ${svcLink('commercial-epoxy-flooring', 'commercial epoxy flooring')} is sche
       <h2 id="ind-h">Warehouses, fleet yards and industrial buildings</h2>
       ${md(`Along Highway 95 and up toward Kingman there are distribution buildings, marine and RV repair shops, contractor yards and equipment storage that take a beating. Forklifts, pallet jacks, hydraulic fluid and grit all wear concrete down, and dusty floors end up on stock and in machinery.
 
-Our ${svcLink('warehouse-floor-coatings', 'warehouse floor coatings')} focus on durability: heavy grinding, joint repair, high-build epoxy or flexible ${svcLink('polyurea-floor-coatings', 'polyurea')} bases, chemical-resistant topcoats and painted-in lanes and safety zones. We work in phases so racking and operations can shift around us.`)}
+Our ${svcLink('commercial-coatings', 'commercial and industrial coatings')} focus on durability: heavy grinding, joint repair, high-build epoxy or flexible ${svcLink('polyurea-coatings', 'polyurea')} bases, chemical-resistant topcoats and painted-in lanes and safety zones. We work in phases so racking and operations can shift around us.`)}
     </div>
   </div>
 </section>
@@ -171,7 +171,7 @@ Our ${svcLink('warehouse-floor-coatings', 'warehouse floor coatings')} focus on 
   <div class="wrap deco__grid">
     <div class="rise">
       <h2 id="deco-h">Decorative and metallic finishes</h2>
-      ${md(`Coatings do not have to look industrial. ${svcLink('decorative-flake-flooring', 'Decorative flake')} floors use layered vinyl chips to give a stone-like look that hides dust and sand between sweeps. Blends can lean warm, with tan and copper, or cool, with grey and river blue.
+      ${md(`Coatings do not have to look industrial. ${svcLink('flake-floors', 'Decorative flake')} floors use layered vinyl chips to give a stone-like look that hides dust and sand between sweeps. Blends can lean warm, with tan and copper, or cool, with grey and river blue.
 
 Metallic epoxy goes further. Pigments are worked by hand through clear resin to create swirls, veins and soft clouds. It suits living rooms, home bars, salons and showrooms, anywhere the floor is meant to be looked at as well as walked on.`)}
       <ul class="swatches" aria-label="Example color directions">
@@ -191,7 +191,7 @@ Metallic epoxy goes further. Pigments are worked by hand through clear resin to 
   <div class="wrap bleed__in rise">
     <h2 id="bleed-h">Book your floor before the summer heat arrives</h2>
     <p>October through April is the easy season for coatings on the river. Spring tends to get busy as winter residents try to finish projects before heading north. Tell us about your floor and we will pencil in a visit.</p>
-    <div class="bleed__btns"><button class="btn btn--gold" type="button" data-quote>Request a free quote</button>${phoneLink('btn btn--ghost')}</div>
+    <div class="bleed__btns"><a class="btn btn--gold" href="#__EST__">Request a free quote</a>${phoneLink('btn btn--ghost')}</div>
   </div>
 </section>
 
@@ -201,7 +201,7 @@ Metallic epoxy goes further. Pigments are worked by hand through clear resin to 
     <ol class="path">${steps.map(([t, d], i) => `<li class="rise d${i % 4}"><span class="path__dot" aria-hidden="true">${i + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></li>`).join('')}</ol>
     <div class="prose rise">${md(`Preparation carries most of the weight. A coating is only as strong as the concrete surface it grips, and builder sealers, paint, curing compounds, efflorescence and oil stains all get in the way. Grinding removes them and leaves a texture the base coat can lock into. Cracks are cut out and filled, spalled edges rebuilt, and control joints either honored or filled depending on where they are.
 
-After that, timing is everything. A base coat that goes down on a cool slab has time to soak in and level. The same coat on a sun-baked slab can kick off in the bucket. That is why our summer start times look unusual, and why we sometimes recommend fast-curing ${svcLink('polyaspartic-floor-coatings', 'polyaspartic')} systems that finish in a single day.`)}</div>
+After that, timing is everything. A base coat that goes down on a cool slab has time to soak in and level. The same coat on a sun-baked slab can kick off in the bucket. That is why our summer start times look unusual, and why we sometimes recommend fast-curing ${svcLink('polyaspartic-coatings', 'polyaspartic')} systems that finish in a single day.`)}</div>
   </div>
 </section>
 
@@ -271,7 +271,7 @@ Spring wind and summer storms push fine dust into every space. We seal openings 
     <div class="rise">
       <h2 id="areas-h">Communities we serve</h2>
       ${md(`We concentrate on the river corridor from Bullhead City south through Fort Mohave and Mohave Valley, with regular trips up to Golden Valley and Kingman. Keeping the service area tight lets us start early in summer without losing the cool hours to the drive.`)}
-      <p><a class="btn btn--line" href="/service-areas/">More about our service area</a></p>
+      <p><a class="btn btn--line" href="/areas-served/">More about our service area</a></p>
     </div>
     <ul class="areas rise d1">${site.serviceAreas.map((a) => `<li><b>${esc(a.name)}</b><span>${esc(a.note)}</span></li>`).join('')}</ul>
   </div>
