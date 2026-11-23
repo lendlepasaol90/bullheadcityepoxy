@@ -1,3 +1,4 @@
+import { addressOneLine, addressHtml, directionsUrl, hoursHtml, hoursShort } from '../lib/nap.mjs';
 import { site } from '../site.mjs';
 import { esc, md, inline, img, abs, beginDedupe, endDedupe } from '../lib/html.mjs';
 import { layout } from './layout.mjs';
@@ -290,6 +291,7 @@ Spring wind and summer storms push fine dust into every space. We seal openings 
       <h2 id="final-h">Tell us about your floor</h2>
       ${md(`Send a few details and we will set up a time to look at the concrete, talk through options and get you a written quote. If you are out of town for the season, let us know when you are back and we will plan around it.`)}
       <p class="final__tel">Prefer to talk? ${phoneLink()}</p>
+      <p class="final__tel">${esc(addressOneLine())}<br>${esc(hoursShort())}</p>
     </div>
     <div class="final__card rise d1">${leadForm({ id: 'home-form', heading: 'Free quote request', withMessage: true })}</div>
   </div>
@@ -301,8 +303,8 @@ Spring wind and summer storms push fine dust into every space. We seal openings 
   endDedupe();
   return layout({
     path: '/',
-    title: 'Epoxy Flooring Bullhead City AZ | Garage, Patio & Commercial',
-    description: 'Epoxy, polyaspartic and polyurea floor coatings in Bullhead City, Fort Mohave and Mohave Valley. Garages, RV and boat bays, patios, homes and businesses.',
+    title: "Bullhead City Epoxy Flooring | Epoxy Flooring Contractor",
+    description: "Bullhead City Epoxy Flooring: epoxy flooring company in Bullhead City, AZ for garage, flake, metallic and commercial floors. Free estimates. Call (928) 569-9275.",
     body,
     current: 'home',
     image: 'river',

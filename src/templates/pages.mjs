@@ -1,3 +1,4 @@
+import { addressOneLine, addressHtml, directionsUrl, hoursHtml, hoursShort } from '../lib/nap.mjs';
 import { site } from '../site.mjs';
 import { esc, md, img } from '../lib/html.mjs';
 import { layout, crumbs } from './layout.mjs';
@@ -9,8 +10,10 @@ const quick = (id) => `<aside class="pg__side">${leadForm({ id, heading: 'Free q
 
 export function renderAbout() {
   const trail = [{ name: 'Home', path: '/' }, { name: 'About us', path: '/about-us/' }];
-  const body = `${top({ title: 'About Bullhead City Epoxy', lede: 'A floor coating company for the river communities, built around careful prep and a schedule that respects the heat.', image: 'riverRock', trail })}
+  const body = `${top({ title: 'About Bullhead City Epoxy Flooring', lede: 'A floor coating company for the river communities, built around careful prep and a schedule that respects the heat.', image: 'riverRock', trail })}
 <div class="wrap pg"><div class="pg__main rise">
+<p>${esc(site.description)}</p>
+<p>${esc(site.name)} is owned by <strong>${esc(site.owner)}</strong>. As an epoxy flooring company in Bullhead City, AZ, we are a local team that answers its own phone and stands behind its own floors.</p>
 ${md(`We put down coatings on garages, homes, patios, businesses and industrial floors from Bullhead City south to Mohave Valley and up the hill toward Kingman. The work sounds simple, and the products are well known, but the results vary enormously depending on two things: how well the concrete is prepared and when the material goes down.
 
 Those two things are where we spend our attention. Every floor is diamond ground. Cracks and joints are repaired before anything is spread. And in the hot months, our crews are mixing at first light, not at two in the afternoon.
@@ -36,7 +39,7 @@ Our service area stretches along the river and up into the high desert, and cond
 The easiest way to start is the quote form or a phone call. We will arrange a visit, look at the concrete and send a written quote. There is no obligation and no pressure to decide on the spot.`)}
 <p class="pg__btns"><a class="btn btn--brown" href="/contact-us/">Contact us</a><a class="btn btn--line" href="/service-areas/">Service areas</a></p>
 </div>${quick('about-form')}</div>`;
-  return layout({ path: '/about-us/', title: 'About Us | Bullhead City Epoxy', description: 'About Bullhead City Epoxy: diamond-ground prep, honest written quotes and coating schedules planned around river-valley heat in Mohave County.', body, current: 'about', image: 'riverRock', breadcrumbs: trail });
+  return layout({ path: '/about-us/', title: 'About Us | Bullhead City Epoxy Flooring', description: 'About Bullhead City Epoxy Flooring: diamond-ground prep, honest written quotes and coating schedules planned around river-valley heat in Mohave County.', body, current: 'about', image: 'riverRock', breadcrumbs: trail });
 }
 
 const towns = {
@@ -72,6 +75,8 @@ export function renderContact() {
     <h2>What helps us quote</h2>
     <ul><li>Which space you want coated, and roughly how big it is</li><li>Whether there is old paint, sealer or coating on the floor now</li><li>Cracks, stains or damage you have noticed</li><li>Whether boats, RVs, trailers or heavy equipment use the space</li><li>When you are in town, if you split your year</li></ul>
     <p><strong>Phone:</strong> ${phoneLink()}${site.email ? `<br><strong>Email:</strong> <a href="mailto:${esc(site.email)}">${esc(site.email)}</a>` : ''}</p>
+    <p><strong>Address:</strong> <a href="${directionsUrl()}" target="_blank" rel="noopener">${esc(addressOneLine())}</a></p>
+    <p><strong>Business hours</strong></p>${hoursHtml()}
     <h3>What happens next</h3>
     <ol><li>We get back to you to set up a visit.</li><li>We look at the concrete, measure and bring samples.</li><li>You receive a written quote with clear options.</li></ol>
   </div>
@@ -102,10 +107,10 @@ If you would like us to correct or delete information you have sent, get in touc
 ## Updates
 
 If this policy changes, the new wording will appear on this page, and it takes effect from the date it is posted.`)}</div>`;
-  return layout({ path: '/privacy-policy/', title: 'Privacy Policy | Bullhead City Epoxy', description: 'How Bullhead City Epoxy collects and uses the details you send through the quote and contact forms on this website, and how to have them removed.', body, breadcrumbs: trail });
+  return layout({ path: '/privacy-policy/', title: 'Privacy Policy | Bullhead City Epoxy Flooring', description: 'How Bullhead City Epoxy Flooring collects and uses the details you send through the quote and contact forms on this website, and how to have them removed.', body, breadcrumbs: trail });
 }
 
 export function render404() {
   const body = `<section class="nf"><div class="wrap narrow"><h1>We could not find that page</h1><p class="dune__lede">The link may be old or mistyped. Try one of these instead.</p><p class="pg__btns"><a class="btn btn--brown" href="/">Homepage</a><a class="btn btn--line" href="/garage-floor-coatings/">Garage coatings</a><a class="btn btn--line" href="/contact-us/">Contact</a></p></div></section>`;
-  return layout({ path: '/404.html', title: 'Page Not Found | Bullhead City Epoxy', description: 'The page you were looking for could not be found.', body }).replace('<meta name="robots" content="index, follow, max-image-preview:large">', '<meta name="robots" content="noindex">');
+  return layout({ path: '/404.html', title: 'Page Not Found | Bullhead City Epoxy Flooring', description: 'The page you were looking for could not be found.', body }).replace('<meta name="robots" content="index, follow, max-image-preview:large">', '<meta name="robots" content="noindex">');
 }

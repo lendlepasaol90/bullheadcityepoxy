@@ -1,3 +1,4 @@
+import { addressOneLine, addressHtml, directionsUrl, hoursHtml, hoursShort } from '../lib/nap.mjs';
 import { site } from '../site.mjs';
 import { esc } from '../lib/html.mjs';
 import { services } from '../content/services/index.mjs';
@@ -37,7 +38,7 @@ export function leadForm({ id, heading, intro, button = 'Send my request', withM
 
 const logo = (cls = '') => `<a class="mark${cls}" href="/" aria-label="${esc(site.name)} home">
       <!-- Logo placeholder: replace this span pair with the final logo image. -->
-      <span class="mark__ph" aria-hidden="true"></span><span class="mark__txt">Bullhead City <b>Epoxy</b></span>
+      <span class="mark__ph" aria-hidden="true"></span><span class="mark__txt">Bullhead City <b>Epoxy Flooring</b></span>
     </a>`;
 
 export function header(current = '') {
@@ -93,13 +94,14 @@ export function header(current = '') {
 
 export function footer() {
   const m = site.map;
-  const src = `https://maps.google.com/maps?q=${encodeURIComponent(m.query)}&ll=${m.lat},${m.lng}&z=${m.zoom}&output=embed`;
+  const src = `https://maps.google.com/maps?q=${encodeURIComponent(`${site.name}, ${m.query}`)}&z=${m.zoom}&output=embed`;
   return `<footer class="ft">
   <div class="wrap ft__grid">
     <div class="ft__brand">
       ${logo(' mark--ft')}
       <p>Garage, home, patio, commercial and shop floor coatings for the Colorado River communities of Mohave County.</p>
       <a class="ft__tel" href="${site.phoneHref}">${esc(site.phone)}</a>
+      <div class="nap">${addressHtml()}<p><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></p><p class="nap__hours">${esc(hoursShort())}</p></div>
     </div>
     <nav aria-label="Footer services"><p class="ft__h">Services</p><ul>${services.map((s) => `<li><a href="/${s.slug}/">${esc(s.name)}</a></li>`).join('')}</ul></nav>
     <nav aria-label="Footer pages"><p class="ft__h">Company</p><ul><li><a href="/about-us/">About us</a></li><li><a href="/service-areas/">Service areas</a></li><li><a href="/contact-us/">Contact</a></li><li><a href="/privacy-policy/">Privacy policy</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></nav>

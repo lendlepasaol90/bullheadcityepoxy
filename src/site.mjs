@@ -1,7 +1,15 @@
 // Site-wide configuration for Bullhead City Epoxy.
 
 export const site = {
-  name: 'Bullhead City Epoxy',
+  name: "Bullhead City Epoxy Flooring",
+  owner: "Samantha Rodgers",
+  category: 'Flooring Contractor',
+  description: "Your concrete floors deserve more than a basic coating. At Bullhead City Epoxy Flooring, we turn dull, cracked-looking, and outdated concrete surfaces into impressive spaces you'll be proud to show off. Located in Bullhead City, AZ, we offer customized flooring options for garages, patios, showrooms, workshops, and commercial properties. Choose from modern metallic epoxy, decorative color flakes, solid-color epoxy, and durable polyaspartic coatings to create a finish that complements your space. Our flooring solutions are designed to resist stains, simplify cleaning, and handle everyday traffic. From bold transformations to clean, understated finishes, Bullhead City Epoxy Flooring helps bring your vision to life. Request your free flooring estimate today!",
+  address: { street: "3072 AZ-95 #125", city: "Bullhead City", state: 'AZ', zip: '86442', country: 'US' },
+  hours: [
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], label: 'Monday – Saturday', opens: '07:00', closes: '18:00', text: '7:00 AM – 6:00 PM' },
+    { days: ['Sunday'], label: 'Sunday', closed: true, text: 'Closed' },
+  ],
   domain: 'https://bullheadcityepoxy.com',
   city: 'Bullhead City',
   cityLong: 'Bullhead City',
@@ -9,13 +17,12 @@ export const site = {
   state: 'AZ',
   locale: 'en_US',
 
-  // PLACEHOLDER — replace before launch, then set phoneVerified: true.
-  phone: '(928) 555-0147',
-  phoneHref: 'tel:+19285550147',
-  phoneVerified: false,
-  email: '',
+  phone: '(928) 569-9275',
+  phoneHref: 'tel:+19285699275',
+  phoneVerified: true,
+  email: 'info@bullheadcityepoxy.com',
 
-  map: { query: 'Bullhead City, AZ', lat: 35.1478, lng: -114.5683, zoom: 12 },
+  map: { query: "3072 AZ-95 #125, Bullhead City, AZ 86442", lat: 35.118, lng: -114.578, zoom: 13 },
 
   serviceAreas: [
     { name: 'Bullhead City', note: 'Riverfront homes, the Parkway corridor, Riviera and the neighborhoods climbing toward the foothills.' },
