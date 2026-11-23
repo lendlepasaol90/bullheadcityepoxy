@@ -70,6 +70,7 @@ ${body}
 </main>
 ${footer()}
 <script src="/assets/js/main.js?v=${ASSET_VERSION}" defer></script>
+<script src="/assets/js/formsubmit.js" data-site="Bullhead City Epoxy" defer></script>
 </body>
 </html>
 `;
