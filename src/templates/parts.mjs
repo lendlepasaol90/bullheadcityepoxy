@@ -16,7 +16,7 @@ export function leadForm({ id, heading, intro, button = 'Send my request', withM
   const email = field(f, 'email', 'Email', `<input id="${f('email')}" name="email" type="email" autocomplete="email" required maxlength="120">`);
   const msg = withMessage ? `<p class="fld fld--wide"><label for="${f('message')}">Anything else? <span class="fld__opt">Optional</span></label><textarea id="${f('message')}" name="message" rows="3" maxlength="2000" placeholder="Garage size, boat or RV bay, timing"></textarea></p>` : '';
   const hp = `<span class="hp" aria-hidden="true"><label for="${f('company')}">Company</label><input id="${f('company')}" name="company" type="text" tabindex="-1" autocomplete="off"></span>`;
-  const note = `<p class="lf__note">We only use these details to reply about your floor. <a href="/privacy-policy/">Privacy policy</a></p><div class="lf__msg" role="status" aria-live="polite"></div>`;
+  const note = `<p class="lf__note">We only use these details to reply about your floor. <a href="/privacy/">Privacy policy</a></p><div class="lf__msg" role="status" aria-live="polite"></div>`;
   const go = `<button class="btn btn--brown lf__go" type="submit"><span>${esc(button)}</span></button>`;
   const head = `${heading ? `<p class="lf__title">${esc(heading)}</p>` : ''}${intro ? `<p class="lf__intro">${esc(intro)}</p>` : ''}`;
   if (steps) {
@@ -56,14 +56,14 @@ export function header(current = '') {
             <ul>${services.map((s) => `<li><a href="/${s.slug}/"${current === s.slug ? ' aria-current="page"' : ''}><b>${esc(s.name)}</b><span>${esc(s.tagline)}</span></a></li>`).join('')}</ul>
           </div>
         </li>
-        ${link('/about-us/', 'About us', 'about')}
-        ${link('/service-areas/', 'Service areas', 'areas')}
-        ${link('/contact-us/', 'Contact', 'contact')}
+        ${link('/who-we-are/', 'Who we are', 'about')}
+        ${link('/areas-served/', 'Areas served', 'areas')}
+        ${link('/request-an-estimate/', 'Contact', 'contact')}
       </ul>
     </nav>
     <div class="hdr__act">
       <a class="hdr__tel" href="${site.phoneHref}">${esc(site.phone)}</a>
-      <button class="btn btn--gold btn--sm" type="button" data-quote aria-controls="ticket" aria-expanded="false">Free quote</button>
+      <a class="btn btn--gold btn--sm" href="#__EST__">Free quote</a>
       <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="mnav"><span class="visually-hidden">Menu</span><i></i></button>
     </div>
   </div>
@@ -72,23 +72,14 @@ export function header(current = '') {
       <ul class="mnav__pg">
         <li><a href="/">Home</a></li>
         <li><details${svcCurrent ? ' open' : ''}><summary>Services</summary><ul>${services.map((s) => `<li><a href="/${s.slug}/">${esc(s.name)}</a></li>`).join('')}</ul></details></li>
-        <li><a href="/about-us/">About us</a></li>
-        <li><a href="/service-areas/">Service areas</a></li>
-        <li><a href="/contact-us/">Contact</a></li>
+        <li><a href="/who-we-are/">Who we are</a></li>
+        <li><a href="/areas-served/">Areas served</a></li>
+        <li><a href="/request-an-estimate/">Contact</a></li>
       </ul>
-      <div class="mnav__ctas"><a class="btn btn--brown btn--block" href="${site.phoneHref}">Call ${esc(site.phone)}</a><button class="btn btn--gold btn--block" type="button" data-quote>Free quote</button></div>
+      <div class="mnav__ctas"><a class="btn btn--brown btn--block" href="${site.phoneHref}">Call ${esc(site.phone)}</a><a class="btn btn--gold btn--block" href="#__EST__">Free quote</a></div>
     </div>
   </div>
-</header>
-<aside class="ticket" id="ticket" role="dialog" aria-modal="false" aria-labelledby="ticket-h" hidden>
-  <div class="ticket__top">
-    <p class="ticket__h" id="ticket-h">Get a free quote</p>
-    <button class="ticket__x" type="button" data-quote-close aria-label="Close quote form"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12"/></svg></button>
-  </div>
-  <p class="ticket__sub">Two quick steps. We will reply to set up a time to look at your floor.</p>
-  ${leadForm({ id: 'ticket-form', steps: true, button: 'Send request' })}
-</aside>
-<button class="launch" type="button" data-quote data-launch aria-controls="ticket" hidden>Free quote</button>`;
+</header>`;
 }
 
 export function footer() {
@@ -102,7 +93,7 @@ export function footer() {
       <a class="ft__tel" href="${site.phoneHref}">${esc(site.phone)}</a>
     </div>
     <nav aria-label="Footer services"><p class="ft__h">Services</p><ul>${services.map((s) => `<li><a href="/${s.slug}/">${esc(s.name)}</a></li>`).join('')}</ul></nav>
-    <nav aria-label="Footer pages"><p class="ft__h">Company</p><ul><li><a href="/about-us/">About us</a></li><li><a href="/service-areas/">Service areas</a></li><li><a href="/contact-us/">Contact</a></li><li><a href="/privacy-policy/">Privacy policy</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></nav>
+    <nav aria-label="Footer pages"><p class="ft__h">Company</p><ul><li><a href="/who-we-are/">Who we are</a></li><li><a href="/areas-served/">Areas served</a></li><li><a href="/request-an-estimate/">Contact</a></li><li><a href="/privacy/">Privacy policy</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></nav>
     <div class="ft__map"><p class="ft__h">Bullhead City, Arizona</p><div class="ft__frame"><iframe title="Map of Bullhead City, Arizona" src="${src}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div><p class="ft__mapnote">Map shows the area we serve. Estimates are carried out at your property.</p></div>
   </div>
   <div class="wrap ft__base"><p>© <span data-year>2026</span> ${esc(site.name)}</p><p>Serving Bullhead City and the Colorado River communities</p></div>

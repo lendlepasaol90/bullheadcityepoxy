@@ -41,7 +41,7 @@ export function renderService(s) {
       ${crumbs([{ name: 'Home', path: '/' }, { name: s.name, path }])}
       <h1>${esc(s.h1)}</h1>
       <p class="dune__lede">${inline(s.lede)}</p>
-      <div class="dune__btns"><button class="btn btn--gold" type="button" data-quote>Get a free quote</button>${phoneLink('btn btn--line')}</div>
+      <div class="dune__btns"><a class="btn btn--gold" href="#__EST__">Get a free quote</a>${phoneLink('btn btn--line')}</div>
       <ul class="chips">${(s.chips || []).map((c) => `<li>${esc(c)}</li>`).join('')}</ul>
     </div>
     <div class="dune__fig"><span class="dune__sun" aria-hidden="true"></span>${img(s.image, { eager: true, sizes: '(max-width: 900px) 92vw, 500px', widths: [500, 800, 1100], ratio: 1 })}</div>

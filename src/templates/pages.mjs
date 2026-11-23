@@ -8,7 +8,7 @@ const top = ({ title, lede, image, trail }) => `<section class="dune dune--pg"><
 const quick = (id) => `<aside class="pg__side">${leadForm({ id, heading: 'Free quote', intro: 'Send your details and we will be in touch.', button: 'Send request' })}</aside>`;
 
 export function renderAbout() {
-  const trail = [{ name: 'Home', path: '/' }, { name: 'About us', path: '/about-us/' }];
+  const trail = [{ name: 'Home', path: '/' }, { name: 'Who we are', path: '/who-we-are/' }];
   const body = `${top({ title: 'About Bullhead City Epoxy', lede: 'A floor coating company for the river communities, built around careful prep and a schedule that respects the heat.', image: 'riverRock', trail })}
 <div class="wrap pg"><div class="pg__main rise">
 ${md(`We put down coatings on garages, homes, patios, businesses and industrial floors from Bullhead City south to Mohave Valley and up the hill toward Kingman. The work sounds simple, and the products are well known, but the results vary enormously depending on two things: how well the concrete is prepared and when the material goes down.
@@ -34,9 +34,9 @@ Our service area stretches along the river and up into the high desert, and cond
 ## Talk to us
 
 The easiest way to start is the quote form or a phone call. We will arrange a visit, look at the concrete and send a written quote. There is no obligation and no pressure to decide on the spot.`)}
-<p class="pg__btns"><a class="btn btn--brown" href="/contact-us/">Contact us</a><a class="btn btn--line" href="/service-areas/">Service areas</a></p>
+<p class="pg__btns"><a class="btn btn--brown" href="/request-an-estimate/">Contact us</a><a class="btn btn--line" href="/areas-served/">Areas served</a></p>
 </div>${quick('about-form')}</div>`;
-  return layout({ path: '/about-us/', title: 'About Us | Bullhead City Epoxy', description: 'About Bullhead City Epoxy: diamond-ground prep, honest written quotes and coating schedules planned around river-valley heat in Mohave County.', body, current: 'about', image: 'riverRock', breadcrumbs: trail });
+  return layout({ path: '/who-we-are/', title: 'Who we are | Bullhead City Epoxy', description: 'About Bullhead City Epoxy: diamond-ground prep, honest written quotes and coating schedules planned around river-valley heat in Mohave County.', body, current: 'about', image: 'riverRock', breadcrumbs: trail });
 }
 
 const towns = {
@@ -51,7 +51,7 @@ const towns = {
 };
 
 export function renderAreas() {
-  const trail = [{ name: 'Home', path: '/' }, { name: 'Service areas', path: '/service-areas/' }];
+  const trail = [{ name: 'Home', path: '/' }, { name: 'Areas served', path: '/areas-served/' }];
   const body = `${top({ title: 'Our service area', lede: 'The Colorado River communities of Mohave County, plus Golden Valley and Kingman in the high desert.', image: 'desertBlue', trail })}
 <div class="wrap">
   <div class="prose rise">${md(`Coating work is very sensitive to timing, especially in summer, when the best hours are early in the morning. Keeping our work concentrated along the river corridor lets us arrive while the slab is still cool. Places further out are scheduled with that in mind.
@@ -61,11 +61,11 @@ If your town is not listed here, give us a call. We will tell you straight away 
   <div class="prose rise"><h2>Services available across the area</h2><ul>${services.map((s) => `<li><a href="/${s.slug}/">${esc(s.name)}</a>: ${esc(s.tagline)}</li>`).join('')}</ul></div>
 </div>
 <section class="sec final" id="quote" aria-labelledby="final-h"><div class="wrap final__grid"><div class="rise"><h2 id="final-h">Not sure if you are in range?</h2><p>Fill in the form and we will let you know if your address is on our route, or ring us on ${phoneLink()}.</p></div><div class="final__card rise d1">${leadForm({ id: 'areas-form', heading: 'Free quote request', withMessage: true })}</div></div></section>`;
-  return layout({ path: '/service-areas/', title: 'Service Areas | Epoxy Floors Bullhead City, Fort Mohave, Kingman', description: 'Floor coatings in Bullhead City, Fort Mohave, Mohave Valley, Golden Shores, Golden Valley, Kingman and nearby Colorado River communities.', body, current: 'areas', image: 'desertBlue', breadcrumbs: trail });
+  return layout({ path: '/areas-served/', title: 'Areas served | Epoxy Floors Bullhead City, Fort Mohave, Kingman', description: 'Floor coatings in Bullhead City, Fort Mohave, Mohave Valley, Golden Shores, Golden Valley, Kingman and nearby Colorado River communities.', body, current: 'areas', image: 'desertBlue', breadcrumbs: trail });
 }
 
 export function renderContact() {
-  const trail = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact-us/' }];
+  const trail = [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/request-an-estimate/' }];
   const body = `${top({ title: 'Contact us', lede: 'Ask a question or request a free quote for your garage, home, patio or business floor.', image: 'jetskiDusk', trail })}
 <div class="wrap pg" id="quote">
   <div class="pg__main rise">
@@ -77,11 +77,11 @@ export function renderContact() {
   </div>
   <div class="final__card rise d1">${leadForm({ id: 'contact-form', heading: 'Free quote request', withMessage: true })}</div>
 </div>`;
-  return layout({ path: '/contact-us/', title: 'Contact | Free Epoxy Floor Quotes in Bullhead City', description: 'Request a free on-site quote for garage, home, patio, commercial or warehouse floor coatings in Bullhead City and the river communities.', body, current: 'contact', image: 'jetskiDusk', breadcrumbs: trail });
+  return layout({ path: '/request-an-estimate/', title: 'Contact | Free Epoxy Floor Quotes in Bullhead City', description: 'Request a free on-site quote for garage, home, patio, commercial or warehouse floor coatings in Bullhead City and the river communities.', body, current: 'contact', image: 'jetskiDusk', breadcrumbs: trail });
 }
 
 export function renderPrivacy() {
-  const trail = [{ name: 'Home', path: '/' }, { name: 'Privacy policy', path: '/privacy-policy/' }];
+  const trail = [{ name: 'Home', path: '/' }, { name: 'Privacy policy', path: '/privacy/' }];
   const body = `${top({ title: 'Privacy policy', lede: 'What we collect through this website and what we do with it.', image: 'desertDusk', trail })}
 <div class="wrap prose" style="padding-bottom:5rem">${md(`## What we collect
 
@@ -97,15 +97,15 @@ Form submissions may reach us through an email or workflow service. The map is p
 
 ## Changing or removing your details
 
-If you would like us to correct or delete information you have sent, get in touch through the [contact page](/contact-us/).
+If you would like us to correct or delete information you have sent, get in touch through the [contact page](/request-an-estimate/).
 
 ## Updates
 
 If this policy changes, the new wording will appear on this page, and it takes effect from the date it is posted.`)}</div>`;
-  return layout({ path: '/privacy-policy/', title: 'Privacy Policy | Bullhead City Epoxy', description: 'How Bullhead City Epoxy collects and uses the details you send through the quote and contact forms on this website, and how to have them removed.', body, breadcrumbs: trail });
+  return layout({ path: '/privacy/', title: 'Privacy Policy | Bullhead City Epoxy', description: 'How Bullhead City Epoxy collects and uses the details you send through the quote and contact forms on this website, and how to have them removed.', body, breadcrumbs: trail });
 }
 
 export function render404() {
-  const body = `<section class="nf"><div class="wrap narrow"><h1>We could not find that page</h1><p class="dune__lede">The link may be old or mistyped. Try one of these instead.</p><p class="pg__btns"><a class="btn btn--brown" href="/">Homepage</a><a class="btn btn--line" href="/garage-floor-coatings/">Garage coatings</a><a class="btn btn--line" href="/contact-us/">Contact</a></p></div></section>`;
+  const body = `<section class="nf"><div class="wrap narrow"><h1>We could not find that page</h1><p class="dune__lede">The link may be old or mistyped. Try one of these instead.</p><p class="pg__btns"><a class="btn btn--brown" href="/">Homepage</a><a class="btn btn--line" href="/garage-floor-epoxy/">Garage coatings</a><a class="btn btn--line" href="/request-an-estimate/">Contact</a></p></div></section>`;
   return layout({ path: '/404.html', title: 'Page Not Found | Bullhead City Epoxy', description: 'The page you were looking for could not be found.', body }).replace('<meta name="robots" content="index, follow, max-image-preview:large">', '<meta name="robots" content="noindex">');
 }
