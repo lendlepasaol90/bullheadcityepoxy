@@ -295,6 +295,16 @@ Spring wind and summer storms push fine dust into every space. We seal openings 
     </div>
     <div class="final__card rise d1">${leadForm({ id: 'home-form', heading: 'Free quote request', withMessage: true })}</div>
   </div>
+</section>
+
+<section class="findus" aria-labelledby="findus-h">
+  <div class="wrap findus__in">
+    <h2 id="findus-h" class="findus__h">You can also find us here</h2>
+    <ul class="findus__list">
+      <li><a href="https://ezlocal.com/az/bullhead-city/concrete-contractor/0919944382" target="_blank" rel="noopener">EZlocal</a></li>
+      <li><a href="https://issuu.com/bullheadcityepoxy?ps=24" target="_blank" rel="noopener">Issuu</a></li>
+    </ul>
+  </div>
 </section>`;
 
   const schema = [
